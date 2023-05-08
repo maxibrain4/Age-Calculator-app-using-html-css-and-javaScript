@@ -1,0 +1,30 @@
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+    max-width: 100%;
+    /* position: fixed; */
+    height: 100%;
+  }
+
+  .btn--btnbody {
+    width: 100%;
+    justify-content: center;
+  }
+  .bottom-div {
+    margin-top: 20px;
+  }
+  .text {
+    font-size: 60px;
+  }
+  .input-box {
+    width: 100%;
+    font-size: 22px;
+  }
+}
+@media (max-width: 461) {
+  .input-box {
+    width: 100%;
+    font-size: 18px;
+    padding: 5px 50px;
+  }
+}

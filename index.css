@@ -15,7 +15,6 @@
 .card {
   width: 100%;
   max-width: 700px;
-
   border-bottom-right-radius: 140px;
   background-color: hsl(0, 0%, 100%);
 }
@@ -35,6 +34,7 @@
   font-size: 32px;
   font-family: 'Poppins', sans-serif;
   border-radius: 5px;
+  border: 1px solid hsl(0, 0%, 86%);
 }
 label {
   font-size: 16px;
@@ -68,6 +68,11 @@ label {
   align-items: center;
   position: absolute;
   transform: translateY(-30px);
+  border: none;
+}
+.btn-body:hover {
+  background-color: hsl(0, 0%, 8%);
+  cursor: pointer;
 }
 .inside-card {
   margin: 40px;
@@ -77,5 +82,6 @@ label {
   padding: 10px 0px;
 }
 
-/* .error {
-} */
+.error {
+  color: hsl(0, 100%, 67%);
+}

@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="query.css" />
     <script defer src="index.js"></script>
     <title>Age Calculator App</title>
   </head>
@@ -21,22 +22,22 @@
           <div class="top-div">
             <div class="input-div">
               <label for="">Day</label><br />
-              <input type="text" name="" id="" class="input-box" />
+              <input type="text" name="" id="Day" class="input-box" />
               <div class="error"></div>
             </div>
             <div class="input-div">
               <label for="">Month</label><br />
-              <input type="text" name="" id="" class="input-box" />
+              <input type="text" name="" id="Month" class="input-box" />
               <div class="error"></div>
             </div>
             <div class="input-div">
               <label for="">Year</label><br />
-              <input type="text" name="" id="" class="input-box" />
+              <input type="text" name="" id="Year" class="input-box" />
               <div class="error"></div>
             </div>
           </div>
           <div class="btn--btnbody">
-            <div class="btn-body">
+            <button class="btn-body">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="46"
@@ -49,14 +50,18 @@
                   />
                 </g>
               </svg>
-            </div>
+            </button>
           </div>
           <div class="bottom-div">
-            <p class="text"><span class="dash-text">--</span>years</p>
+            <p class="text">
+              <span class="dash-text years-text">--</span>years
+            </p>
 
-            <p class="text"><span class="dash-text">--</span>months</p>
+            <p class="text">
+              <span class="dash-text months-text">--</span>months
+            </p>
 
-            <p class="text"><span class="dash-text">--</span>days</p>
+            <p class="text"><span class="dash-text days-text">--</span>days</p>
           </div>
         </div>
       </div>
