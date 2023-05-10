@@ -1,82 +1,93 @@
 'use strict';
-const Day = document.querySelector('#Day');
-const Month = document.querySelector('#Month');
-const Year = document.querySelector('#Year');
+//input
+const dayInput = document.querySelector('#Day');
+const monthInput = document.querySelector('#Month');
+const yearInput = document.querySelector('#Year');
 const btn = document.querySelector('.btn-body');
+//text
 const yearsText = document.querySelector('.years-text');
 const monthsText = document.querySelector('.months-text');
 const daysText = document.querySelector('.days-text');
 
-const dayValue = Day.value;
-const monthValue = Month.value;
-const yearValue = Year.value;
+//errors
+const errorDay = document.querySelector('.error-day');
+const errorMonth = document.querySelector('.error-month');
+const errorYear = document.querySelector('.error-year');
 
-const ourDate = new Date();
-let currentDay = ourDate.getDate();
-let currentMonth = ourDate.getMonth() + 1;
-let currentYear = ourDate.getFullYear();
-let monthsDates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let isValid = false;
+const currentYear = new Date().getFullYear();
 
-// const validate = function () {
-//   const inputs = document.querySelectorAll('input-box');
-//   let validator = true;
-//   inputs.forEach(i => {
-//     const parent = i.parentElement;
-//     if (!i.value) {
-//       i.style.borderColor = 'hsl(0, 100%, 67%)';
-//       parentElement.querySelector('.error').innerText =
-//         'this field is required.';
-//       validator = false;
-//     } else if (monthValue > 12) {
-//       Month.style.borderColor = 'red';
-//       Month.parentElement.querySelector('.error').innerText =
-//         'must be a valid month';
-//       validator = false;
-//     } else if (dayValue > 31) {
-//       Day.style.borderColor = 'red';
-//       Day.parentElement.querySelector('.error').innerText =
-//         'must be a valid month';
-//       validator = false;
-//     } else {
-//       i.style.borderColor = 'black';
-//       parentElement.querySelector('.error').innerText = '';
-//       validator = true;
-//     }
-//   });
-//   return validator;
-// };
+dayInput.addEventListener('input', function (e) {
+  if (+dayInput.value > 31) {
+    errorDay.textContent = 'Must be a valid date';
+    isValid;
+    return;
+  } else {
+    isValid = true;
+    errorDay.textContent = '';
+  }
 
-// btn.addEventListener('click', function () {
-// if (dayValue > currentDay) {
-//   currentDay = monthsDates[currentMonth - 1];
-//   monthsDates = monthsDates - 1;
-//   daysText.textContent = dayValue - currentDay;
-// }
-// if (monthValue > currentMonth) {
-//   monthsText.textContent = monthValue - currentMonth;
-// } else {
-//   monthsText.textContent = currentMonth - monthValue;
-// }
-// if (dayValue > currentDay) {
-//   yearsText.textContent = yearValue - currentYear;
-// } else {
-//   yearsText.textContent = currentYear - yearValue;
-// }
-//   if (validate()) {
-//     if (dayValue > currentDay) {
-//       currentDay = currentDay + monthsDates[currentMonth - 1];
-//       currentMonth = currentMonth - 1;
-//     }
-//     if (monthValue > currentMonth) {
-//       currentMonth = currentMonth + 12;
-//       currentYear = currentYear - 1;
-//     }
-//   }
-//   const d = dayValue - currentDay;
-//   const m = monthValue - currentMonth;
-//   const y = yearValue - currentYear;
+  if (+dayInput.value === 0) {
+    errorDay.textContent = 'this field is required';
+    isValid;
+    return;
+  } else {
+    errorDay.textContent = '';
+  }
+});
 
-//   daysText.textContent = d;
-//   monthsText.textContent = m;
-//   yearsText.textContent = y;
-// });
+monthInput.addEventListener('input', function (e) {
+  if (+monthInput.value > 12) {
+    errorMonth.textContent = 'Must be a valid date';
+    isValid;
+    return;
+  } else {
+    isValid = true;
+    errorMonth.textContent = '';
+  }
+
+  if (+monthInput.value === 0) {
+    errorMonth.textContent = 'this field is required';
+    isValid;
+    return;
+  } else {
+    errorMonth.textContent = '';
+  }
+});
+
+yearInput.addEventListener('input', function (e) {
+  if (+yearInput.value > currentYear) {
+    errorYear.textContent = 'Must be a valid date';
+    isValid;
+    return;
+  } else {
+    isValid = true;
+    errorYear.textContent = '';
+  }
+
+  if (+yearInput.value === 0) {
+    errorYear.textContent = 'this field is required';
+    isValid;
+    return;
+  } else {
+    errorYear.textContent = '';
+  }
+});
+
+const calculateDate = function () {
+  if (isValid) {
+    let birthday = `${monthInput.value}/${dayInput.value}/${yearInput.value}`;
+    let birthdayObj = new Date(birthday);
+    let ageDiffMill = Date.now() - birthdayObj;
+    let ageDate = new Date(ageDiffMill);
+    let ageYears = ageDate.getUTCFullYear() - 1970;
+    let ageMonth = ageDate.getUTCMonth();
+    let ageDay = ageDate.getUTCDate();
+    yearsText.textContent = ageYears;
+    monthsText.textContent = ageMonth;
+    daysText.textContent = ageDay;
+  } else {
+    alert('enter an input');
+  }
+};
+btn.addEventListener('click', calculateDate);
