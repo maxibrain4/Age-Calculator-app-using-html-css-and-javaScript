@@ -22,7 +22,7 @@ const currentYear = new Date().getFullYear();
 
 dayInput.addEventListener('input', function (e) {
   if (+dayInput.value > 31) {
-    errorDay.textContent = 'Must be a valid date';
+    errorDay.textContent = 'Must be a valid day';
     dayInput.style.border = '1px solid red';
     labelDay.style.color = 'red';
     isValid;
@@ -49,7 +49,7 @@ dayInput.addEventListener('input', function (e) {
 
 monthInput.addEventListener('input', function (e) {
   if (+monthInput.value > 12) {
-    errorMonth.textContent = 'Must be a valid date';
+    errorMonth.textContent = 'Must be a valid Month';
     monthInput.style.border = '1px solid red';
     labelMonth.style.color = 'red';
     isValid;
@@ -76,7 +76,7 @@ monthInput.addEventListener('input', function (e) {
 
 yearInput.addEventListener('input', function (e) {
   if (+yearInput.value > currentYear) {
-    errorYear.textContent = 'Must be a valid date';
+    errorYear.textContent = 'Must be in the past';
     yearInput.style.border = '1px solid red';
     labelYear.style.color = 'red';
     isValid;

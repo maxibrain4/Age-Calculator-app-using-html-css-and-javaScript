@@ -87,4 +87,7 @@ label {
 
 .error {
   color: hsl(0, 100%, 67%);
+  font-style: italic;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
 }
