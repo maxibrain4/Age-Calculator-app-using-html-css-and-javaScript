@@ -23,8 +23,8 @@ const currentYear = new Date().getFullYear();
 dayInput.addEventListener('input', function (e) {
   if (+dayInput.value > 31) {
     errorDay.textContent = 'Must be a valid day';
-    dayInput.style.border = '1px solid red';
-    labelDay.style.color = 'red';
+    dayInput.style.border = '1px solid  hsl(0, 100%, 67%);';
+    labelDay.style.color = ' hsl(0, 100%, 67%);';
     isValid;
     return;
   } else {
@@ -36,8 +36,8 @@ dayInput.addEventListener('input', function (e) {
 
   if (+dayInput.value === 0) {
     errorDay.textContent = 'this field is required';
-    dayInput.style.border = '1px solid red';
-    labelDay.style.color = 'red';
+    dayInput.style.border = '1px solid  hsl(0, 100%, 67%);';
+    labelDay.style.color = ' hsl(0, 100%, 67%);';
     isValid;
     return;
   } else {
@@ -50,8 +50,8 @@ dayInput.addEventListener('input', function (e) {
 monthInput.addEventListener('input', function (e) {
   if (+monthInput.value > 12) {
     errorMonth.textContent = 'Must be a valid Month';
-    monthInput.style.border = '1px solid red';
-    labelMonth.style.color = 'red';
+    monthInput.style.border = '1px solid  hsl(0, 100%, 67%);';
+    labelMonth.style.color = ' hsl(0, 100%, 67%);';
     isValid;
     return;
   } else {
@@ -63,8 +63,8 @@ monthInput.addEventListener('input', function (e) {
 
   if (+monthInput.value === 0) {
     errorMonth.textContent = 'this field is required';
-    monthInput.style.border = '1px solid red';
-    labelMonth.style.color = 'red';
+    monthInput.style.border = '1px solid  hsl(0, 100%, 67%);';
+    labelMonth.style.color = ' hsl(0, 100%, 67%);';
 
     return;
   } else {
@@ -77,8 +77,8 @@ monthInput.addEventListener('input', function (e) {
 yearInput.addEventListener('input', function (e) {
   if (+yearInput.value > currentYear) {
     errorYear.textContent = 'Must be in the past';
-    yearInput.style.border = '1px solid red';
-    labelYear.style.color = 'red';
+    yearInput.style.border = '1px solid  hsl(0, 100%, 67%);';
+    labelYear.style.color = ' hsl(0, 100%, 67%);';
     isValid;
     return;
   } else {
@@ -90,8 +90,8 @@ yearInput.addEventListener('input', function (e) {
 
   if (+yearInput.value === 0) {
     errorYear.textContent = 'this field is required';
-    yearInput.style.border = '1px solid red';
-    labelYear.style.color = 'red';
+    yearInput.style.border = '1px solid  hsl(0, 100%, 67%);';
+    labelYear.style.color = ' hsl(0, 100%, 67%);';
     isValid;
     return;
   } else {
